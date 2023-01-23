@@ -15,18 +15,38 @@ There are four scripts running on a loop (along with a configuration file):
 ## Installation
 The scripts have been tested on Ubuntu 20.04.
 ### prerequisites
-Install python3 <br>
-` sudo apt-get update ` <br>
-` sudo apt-get install python3.8 ` <br><br>
-Install the SQL ODBC Connector <br>
-``` sudo su
+Install python3:<br>
+
+```
+sudo apt-get update
+sudo apt-get install python3.8 
+```
+<br>
+Install the SQL ODBC Connector:<br>
+
+```
+sudo su
 curl https://packages.microsoft.com/keys/microsoft.asc | apt-key add -
 
 curl https://packages.microsoft.com/config/ubuntu/$(lsb_release -rs)/prod.list > /etc/apt/sources.list.d/mssql-release.list
 
 exit
 sudo apt-get update
-sudo ACCEPT_EULA=Y apt-get install -y msodbcsql18 ``` <br>
+sudo ACCEPT_EULA=Y apt-get install -y msodbcsql18 
+```
+<br>
+Install python modules (pyodbc and requests):<br>
 
+``` 
+sudo -H pip install pyodbc
+python -m pip install requests
+```
+<br>
+Install aria2c on the server where the download script will be running:<br>
+
+```
+sudo apt install aria2
+```
+<br>
 
 ## Usage
