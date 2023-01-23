@@ -10,6 +10,7 @@ CREATE TABLE [dbo].[FilecoinDeals](
 	[DownloadStatus] [nvarchar](16) NULL,
 	[PieceCid] [nvarchar](132) NULL,
 	[DealId] [nvarchar](132) NULL,
-	[DealStatus] [nvarchar](256) NULL
+	[DealStatus] [nvarchar](256) NULL,
+	[DealDate] [DateTime] NULL
 ) ON [PRIMARY]
 GO
