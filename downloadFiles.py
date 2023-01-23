@@ -4,8 +4,6 @@ import pyodbc
 import configparser
 import time
 from datetime import datetime
-import requests
-import json
 import os
 import subprocess
 
@@ -19,7 +17,6 @@ config.read(configFilePath)
 
 
 try:
-    # Connect to the SQL database
     print(datetime.now(),"- Connecting to SQL database")
     cnxn = pyodbc.connect('DRIVER='+config["sql"]["driver"]+';SERVER=tcp:'+config["sql"]["server"]+';PORT=1433;DATABASE='+config["sql"]["database"]+';UID='+config["sql"]["username"]+';PWD='+config["sql"]["password"])
     cursor = cnxn.cursor()
@@ -41,7 +38,6 @@ try:
                     print(datetime.now(),"- Error during the download")
                     update_query = "UPDATE FilecoinDeals SET DownloadStatus='Error - file does not exist' WHERE Filename='" + row.Filename + "' AND DownloadPath='" + row.DownloadPath + "'"
             else:
-                #file does exists
                 update_query = "UPDATE FilecoinDeals SET DownloadStatus='Completed' WHERE Filename='" + row.Filename + "' AND DownloadPath='" + row.DownloadPath + "'"
                 print(datetime.now(),"- File to download already exist in the folder")
             cursor.execute(update_query)
@@ -51,6 +47,10 @@ try:
         
         print(datetime.now(),"- Sleeping for",config["deals"]["waitEndLoop"],"secs")
         time.sleep(int(config["deals"]["waitEndLoop"]))
+
+        config = configparser.ConfigParser()
+        configFilePath = r'dealEngine.conf'
+        config.read(configFilePath)
 
 except pyodbc.Error as e:
     print(datetime.now(),"- Exception Error!")
