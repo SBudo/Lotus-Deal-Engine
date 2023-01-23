@@ -13,8 +13,9 @@ There are four scripts running on a loop (along with a configuration file):
 - cleanupFiles.py: to clean up existing files after the deal has been sealed
 
 ## Installation
-The scripts have been tested on Ubuntu 20.04.
-The installation steps below has to be done on all servers where the scripts will be running.
+The scripts have been tested on Ubuntu 20.04.<br>
+The installation steps below have to be done on all servers where the scripts will be running.<br>
+You can run the scripts on separate servers or one server, but it is recommended to run the "ingestDeals.py" on the boost node<br>
 
 Install python3:<br>
 
@@ -43,7 +44,7 @@ pip install pyodbc
 pip install requests
 ```
 <br>
-Install aria2c on the server where the download script will be running:<br>
+Install aria2c only on the server where the download script will be running:<br>
 
 ```
 sudo apt install aria2
