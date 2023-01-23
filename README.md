@@ -13,5 +13,20 @@ There are four scripts running on a loop (along with a configuration file):
 - cleanupFiles.py: to clean up existing files after the deal has been sealed
 
 ## Installation
+The scripts have been tested on Ubuntu 20.04.
+### prerequisites
+Install python3 <br>
+` sudo apt-get update ` <br>
+` sudo apt-get install python3.8 ` <br><br>
+Install the SQL ODBC Connector <br>
+``` sudo su
+curl https://packages.microsoft.com/keys/microsoft.asc | apt-key add -
+
+curl https://packages.microsoft.com/config/ubuntu/$(lsb_release -rs)/prod.list > /etc/apt/sources.list.d/mssql-release.list
+
+exit
+sudo apt-get update
+sudo ACCEPT_EULA=Y apt-get install -y msodbcsql18 ``` <br>
+
 
 ## Usage
