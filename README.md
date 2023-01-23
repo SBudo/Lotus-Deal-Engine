@@ -38,8 +38,8 @@ sudo ACCEPT_EULA=Y apt-get install -y msodbcsql18
 Install python modules (pyodbc and requests):<br>
 
 ``` 
-sudo -H pip install pyodbc
-python -m pip install requests
+pip install pyodbc
+pip install requests
 ```
 <br>
 Install aria2c on the server where the download script will be running:<br>
