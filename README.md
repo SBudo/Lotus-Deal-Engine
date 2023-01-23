@@ -14,7 +14,8 @@ There are four scripts running on a loop (along with a configuration file):
 
 ## Installation
 The scripts have been tested on Ubuntu 20.04.
-### prerequisites
+The installation steps below has to be done on all servers where the scripts will be running.
+
 Install python3:<br>
 
 ```
@@ -48,5 +49,10 @@ Install aria2c on the server where the download script will be running:<br>
 sudo apt install aria2
 ```
 <br>
+
+Clone the repo: <br>
+```
+git clone https://github.com/SBudo/Lotus-Deal-Engine
+```
 
 ## Usage
