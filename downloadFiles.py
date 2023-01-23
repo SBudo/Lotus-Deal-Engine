@@ -28,7 +28,7 @@ try:
         results = cursor.execute("SELECT TOP 1 * FROM FilecoinDeals WHERE DownloadStatus='NotStarted' or DownloadStatus='InProgress'")
         if results.arraysize == 1:
             row = cursor.fetchone()
-            update_query = "UPDATE FilecoinDeals SET DownloadStatus='Completed' WHERE Filename='" + row.Filename + "' AND DownloadPath='" + row.DownloadPath + "'"
+            update_query = "UPDATE FilecoinDeals SET DownloadStatus='InProgress' WHERE Filename='" + row.Filename + "' AND DownloadPath='" + row.DownloadPath + "'"
             cursor.execute(update_query)
             cnxn.commit()
             if os.path.exists(row.DownloadPath+row.Filename) == False or os.path.exists(row.DownloadPath+row.Filename+".aria2") == True:
