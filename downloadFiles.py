@@ -50,7 +50,7 @@ try:
             print(datetime.now(),"- No files to download")
         
         print(datetime.now(),"- Sleeping for",config["deals"]["waitEndLoop"],"secs")
-        time.sleep(config["deals"]["waitEndLoop"])
+        time.sleep(int(config["deals"]["waitEndLoop"]))
 
 except pyodbc.Error as e:
     print(datetime.now(),"- Exception Error!")
