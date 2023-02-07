@@ -10,22 +10,6 @@ import os
 import subprocess
 
 
-
-def convert_array_to_hash(arr, key_member):
-    # Instantiate the hashtable
-    hsh = {}
-
-    if arr is not None:
-        # Pass the array into the hashtable
-        for obj in arr:
-            print(obj[key_member])
-            key=str(obj[key_member])
-            hsh[key] = obj['Message']
-
-    # return the new hashtable
-    return hsh
-
-
 print(datetime.now(),"- Starting update deal status process")
 
 print(datetime.now(),"- Reading configuration file")
