@@ -62,7 +62,7 @@ try:
                 dealRow = cursor.fetchone()
 
             if len(dealRow) > 0:
-                print (datetime.now(),"- Found a deal to import:",dealRow[0].DealId)
+                print (datetime.now(),"- Found a deal to import:",dealRow.DealId)
                 fileToImport = dealRow.ImportPath + dealRow.Filename
                 if os.path.exists(fileToImport) == True:
                     importCMD = "boostd import-data " + dealRow.DealId + " " + fileToImport
