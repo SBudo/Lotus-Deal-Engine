@@ -22,6 +22,7 @@ Install python3:<br>
 ```
 sudo apt-get update
 sudo apt-get install python3.8 
+sudo apt install python3-pip
 ```
 <br>
 Install the SQL ODBC Connector:<br>
